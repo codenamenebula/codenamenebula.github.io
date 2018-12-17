@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-tagline: A few more words about this theme
+title: 关于我
+tagline: 一个来自深渊的魔鬼
 permalink: /about.html
 ---
 
