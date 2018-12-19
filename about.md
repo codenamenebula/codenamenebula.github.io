@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 关于我
+title: About
 tagline: 一个来自深渊的魔鬼
 permalink: /about.html
 ---

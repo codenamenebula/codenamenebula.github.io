@@ -1,14 +1,33 @@
 ---
 layout: page
 title: Contact
-tagline: Create a contact form and you are good to go
 ---
 
-Jekyll is a great tool to create static sites but with static site, there's no backend to send your data to: that is why it's hard to put a form on a Jekyll site.
-
-Here listed some resources which provide  a saas service as a backend for forms (contact forms, hiring forms, etc.) to designers and developers like you:
-1. [Formspree (also open source, free)](https://formspree.io/)
-2. [FormKeep](https://formkeep.com/guides/contact-form-jekyll)
-3. [Simple Form](https://getsimpleform.com/)
-
-[Go to the Home Page]({{ site.url }}{{ site.baseurl }})
+<form id="form" action="https://getsimpleform.com/messages?form_api_token=cb6647cf30878ba7ded34b2340bf2963" method="post">
+  <div class="list-cell">
+    <input type='text' autocomplete="off" id='email' name='email' placeholder='Your Email' onkeydown="if(event.keyCode==13)return false;" />
+  </div>
+  <div class="list-cell">
+    <textarea name="message" id="message" rows='8' placeholder='content (length > 6)'></textarea>
+  </div>
+  <div class="btn-row list-cell">
+    <button id="submitBtn" type="button">send</button> 
+  </div>
+</form>
+<script>
+    window.onload=function(){
+        var Email =document.getElementById("email");
+        var Message =document.getElementById("message");
+        var Form =document.getElementById("form");
+        var emailText =Email.value.trim();
+        var messageText =Message.value.trim();
+        var Reg =/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
+        document.getElementById("submitBtn").onclick=function(){
+            if(Reg.test(emailText) && messageText.length > 6){
+                document.getElementById("form").submit();
+            }else{
+                alert("请您老把信息填完整,填正确😊");
+            }
+        }
+    }
+</script>
